@@ -1,0 +1,50 @@
+<template>
+  <div class="posts">
+    <h1>Posts</h1>
+    <textarea name="" id="" v-autofocus></textarea>
+
+    <ul>
+      <li
+        v-for="post in posts" :key="post.id"
+      >
+        <RouterLink :to="`/postdetail/${post.id}`">{{post.title}}</RouterLink>
+      </li>
+    </ul>
+
+  </div>
+</template>
+
+<style scoped>
+  ul{
+    margin-top: 30px;
+  }
+</style>
+
+<script setup>
+
+import { vAutofocus } from '@/directives/vAutofocus';
+// import { RouterLink } from 'vue-router';
+import { ref } from 'vue'
+
+// this is the way to show data dynamically in html, we set the object and then use that object in the html using v-for (lists) (similar to foreach in php) 
+// the key attribute in v-for is used to let the DOM know that which element has changed
+const posts = ref ([
+  {
+    id: 'id1',
+    title: 'post 1'
+  },
+  {
+    id: 'id2',
+    title: 'post 2'
+  },
+  {
+    id: 'id3',
+    title: 'post 3'
+  },
+  {
+    id: 'id4',
+    title: 'post 4'
+  }
+])
+
+</script>
