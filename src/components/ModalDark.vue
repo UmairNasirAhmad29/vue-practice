@@ -1,5 +1,5 @@
 <template>
-    <div v-if="modelValue" class="modal">
+    <div v-if="modelValue" class="modal-dark">
         <h2>{{ title }}</h2>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure adipisci nostrum, beatae unde inventore ipsam earum eveniet error. Deleniti pariatur illum molestias error ab nam dolorum quas, incidunt unde tempore!</p>
         <!-- <button @click="$emit('hideModal')">Hide Modal</button> -->
@@ -46,10 +46,10 @@
 
 <style>
     h2, p{
-        color: black;
+        color: whit;
     }
-    .modal{
-        background: beige;
+    .modal-dark{
+        background: grey;
         padding: 10px;
     }
 </style>
