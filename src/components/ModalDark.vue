@@ -46,7 +46,7 @@
 
 <style>
     h2, p{
-        color: whit;
+        color: white;
     }
     .modal-dark{
         background: grey;

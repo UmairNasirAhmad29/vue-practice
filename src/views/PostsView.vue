@@ -12,6 +12,11 @@
     </ul>
 
   </div>
+  <div>
+    <button @click="increaseCounter(1)" class="counter-button" :class="{ 'odd-counter' : oddOrEven === 'odd' }">
+      {{ counterData.count }}
+    </button>
+  </div>
 </template>
 
 <style scoped>
@@ -25,6 +30,7 @@
 import { vAutofocus } from '@/directives/vAutofocus';
 // import { RouterLink } from 'vue-router';
 import { ref } from 'vue'
+import {useCounter} from '@/use/useCounter'
 
 // this is the way to show data dynamically in html, we set the object and then use that object in the html using v-for (lists) (similar to foreach in php) 
 // the key attribute in v-for is used to let the DOM know that which element has changed
@@ -47,4 +53,17 @@ const posts = ref ([
   }
 ])
 
+const {counterData, increaseCounter, oddOrEven} = useCounter()
+
 </script>
+
+<style>
+  .counter-button{
+    font-size: 60px;
+    background-color: pink;
+    width: 100%;
+  }
+  .odd-counter{
+    background-color: yellow;
+  }
+</style>

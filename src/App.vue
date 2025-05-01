@@ -9,6 +9,11 @@
 
   <div>
     {{ userData.name }} @{{ userData.username }}
+
+    Network Status:
+    <span :style="{ color: online ? 'green' : 'red'}">
+      {{ online ? 'Online' : 'Offline' }}
+    </span>
   </div>
 
   <!-- <router-view v-slot="{ Component }">
@@ -20,6 +25,7 @@
 
 <script setup>
 import { reactive, provide } from 'vue';
+import { useOnline } from '@vueuse/core'
 
 // setting up a reactive object and passing data to shild of child component using provide derivative (import before use)
 const userData = reactive({
@@ -28,6 +34,10 @@ const userData = reactive({
 })
 
 provide('userData', userData)
+
+// useOnline is one of a component from vue js VueUse library and tells wheter we are connected to the internet or not. 
+// There are more than 100 composibles and they can be used using this library 
+const online = useOnline()
 
 </script>
 
