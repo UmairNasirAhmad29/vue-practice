@@ -7,10 +7,15 @@
 
         <!-- passing update:modelValue using emit directly from button rather than calling from script -->
         <button @click="$emit('update:modelValue', false)">Hide Modal</button>
+        <div class="data-using-provide-inject">
+            Name is: {{ userData.name }} and Username is @{{ userData.username }}
+        </div>
     </div>
 </template>
 
 <script setup>
+
+    import { inject } from 'vue';
 
     const props = defineProps({
 
@@ -39,13 +44,15 @@
         emit('update:modelValue', false);
     }
 
+    // fetching a reactive object and using that data from parent of parent component using inject derivative (import before use)
+    const userData = inject('userData')
 
     
 
 </script>
 
 <style>
-    h2, p{
+    h2, p, .data-using-provide-inject{
         color: black;
     }
     .modal{

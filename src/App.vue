@@ -7,12 +7,29 @@
 
   <RouterView />
 
+  <div>
+    {{ userData.name }} @{{ userData.username }}
+  </div>
+
   <!-- <router-view v-slot="{ Component }">
     <keep-alive>
       <component :is="Component" />
     </keep-alive>
   </router-view> -->
 </template>
+
+<script setup>
+import { reactive, provide } from 'vue';
+
+// setting up a reactive object and passing data to shild of child component using provide derivative (import before use)
+const userData = reactive({
+  name: 'umair',
+  username: 'umairnasir'
+})
+
+provide('userData', userData)
+
+</script>
 
 <style>
 @import '@/assets/base.css';
