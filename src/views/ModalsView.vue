@@ -2,7 +2,7 @@
     <div class="modals">
         <h1>Modals</h1>
         <button @click="showModal=true">Show Modal</button>
-        <Modal v-if="showModal" @hideModal="showModal = false" title="This is a modal (via Prop)"></Modal>
+        <Modal v-if="showModal" @hideModal="showModal = false" title="This is a modal (via Prop)"></Modal> <!-- fetching data from child files using emits -->
     </div>
 </template>
 

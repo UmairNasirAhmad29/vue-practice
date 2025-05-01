@@ -19,6 +19,7 @@
 
     // const emit = defineEmits(['hideModal'])
 
+    // sending data to parent file using emits
     const emit = defineEmits()
     const handleButtonClick = () => {
 
